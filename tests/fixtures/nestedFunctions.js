@@ -1,6 +1,6 @@
-import * as esprima from 'esprima';
+import * as espree from 'espree';
 
-const parsed = esprima.parse(`
+const parsed = espree.parse(`
     function foo() {
       var x = 1;
       function bar() {

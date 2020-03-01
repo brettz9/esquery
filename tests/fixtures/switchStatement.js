@@ -1,6 +1,6 @@
-import * as esprima from 'esprima';
+import * as espree from 'espree';
 
-const parsed = esprima.parse(`
+const parsed = espree.parse(`
     var x = 1;
     switch (x) {
       case 0: foo1(); break;
