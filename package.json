@@ -11,9 +11,12 @@
     "url": "https://github.com/estools/esquery.git"
   },
   "scripts": {
-    "build-esquery": "rollup -c",
-    "build-esprima": "rollup -c rollup.esprima.js",
-    "update": "rm -rf node_modules/esquery && npm install --no-save esquery && npm run build-esquery && npm run build-esprima",
+    "build-esquery": "rollup -c build/rollup.config.js",
+    "build-esprima": "rollup -c build/rollup.esprima.js",
+    "build-espree": "rollup -c build/rollup.espree.js",
+    "build-typescript-eslint": "rollup -c build/rollup.typescript-eslint.js",
+    "build-babel-eslint": "rollup -c build/rollup.babel-eslint.js",
+    "update": "rm -rf node_modules/esquery && npm install --no-save esquery && npm run build-esquery && npm run build-esprima && npm run build-espree && npm run build-typescript-eslint && npm run build-babel-eslint",
     "publish": "git commit -a -m 'update gh-pages' && git push"
   },
   "dependencies": {
@@ -23,9 +26,16 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-replace": "^2.3.1",
+    "@typescript-eslint/parser": "^2.24.0",
+    "babel-eslint": "^10.1.0",
     "esm": "^3.2.25",
+    "espree": "^6.2.1",
     "esprima": "^4.0.1",
     "rollup": "^1.32.0",
-    "rollup-plugin-terser": "^5.2.0"
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "typescript": "^3.8.3"
   }
 }

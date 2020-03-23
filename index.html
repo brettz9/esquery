@@ -6,15 +6,28 @@
 
     <link rel="stylesheet" href="index.css" />
 
+    <!--
+    <script src="parsers/babel-eslint.umd.js"></script>
+    <script src="parsers/typescript-eslint.umd.js"></script>
+    -->
+    <script src="parsers/espree.umd.js"></script>
+    <script src="parsers/esprima.umd.js"></script>
+
     <script src="esquery.umd.js"></script>
     <!--
     <script src="node_modules/esquery/dist/esquery.min.js"></script>
     -->
 
-    <script src="esprima.umd.js"></script>
     <script src="index.js" defer="defer"></script>
 </head>
 <body>
+    <fieldset id="parser-choice">
+        <legend>Parser</legend>
+        <label><input type="radio" name="parser" value="babel-eslint"> babel-eslint</label>
+        <label><input type="radio" name="parser" value="espree"> Espree</label>
+        <label><input type="radio" name="parser" value="esprima" checked> Esprima</label>
+        <label><input type="radio" name="parser" value="typescript-eslint"> @typescript-eslint/parser</label>
+    </fieldset>
     <p>
         <textarea id="source" wrap="off">var x = 1;
 var y = 2;

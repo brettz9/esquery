@@ -1,11 +1,25 @@
-/* globals esprima, esquery */
+/* globals esprima, espree, esquery */
 var sourceNode = document.getElementById("source");
 var selectorNode = document.getElementById("selector");
 var selectorAstNode = document.getElementById("selectorAst");
 var outputNode = document.getElementById("output");
 
+var esprimaParser = esprima.parse.bind(esprima);
+var espreeParser = espree.parse.bind(espree);
+
+function getParser () {
+    const parserChoice = document.querySelector('#parser-choice input[type=radio]:checked');
+    switch (parserChoice.value) {
+    case 'espree':
+        return espreeParser;
+    case 'esprima':
+        return esprimaParser;
+    }
+}
+
 function update() {
-    var ast = esprima.parse(sourceNode.value);
+    var parser = getParser();
+    var ast = parser(sourceNode.value);
 
     var selector = selectorNode.value;
     selectorAstNode.innerHTML = "";

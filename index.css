@@ -11,3 +11,7 @@ textarea, pre, input {
 #selector {
     width: 100%;
 }
+
+#parser-choice label {
+    padding-right: 10px;
+}
