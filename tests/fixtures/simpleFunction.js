@@ -1,4 +1,4 @@
-import * as esprima from 'esprima';
+const esprima = require('esprima');
 
 const parsed = esprima.parse(`
     function foo(x, y) {
@@ -8,4 +8,4 @@ const parsed = esprima.parse(`
     }
 `);
 
-export default parsed;
+module.exports = parsed;

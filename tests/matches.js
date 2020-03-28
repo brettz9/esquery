@@ -1,7 +1,7 @@
-import esquery from '../esquery.js';
-import forLoop from './fixtures/forLoop.js';
-import simpleProgram from './fixtures/simpleProgram.js';
-import conditional from './fixtures/conditional.js';
+const esquery = require('../');
+const forLoop = require('./fixtures/forLoop.js');
+const simpleProgram = require('./fixtures/simpleProgram.js');
+const conditional = require('./fixtures/conditional.js');
 
 describe('matches', function () {
     it('falsey node', function () {

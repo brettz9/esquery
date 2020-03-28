@@ -24,7 +24,6 @@
     ],
     "exclude": [
       "parser.js",
-      "dist",
       "tests"
     ]
   },

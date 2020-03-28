@@ -1,5 +1,5 @@
-import esquery from '../esquery.js';
-import conditional from './fixtures/conditional.js';
+const esquery = require('../');
+const conditional = require('./fixtures/conditional.js');
 
 describe('Compound query', function () {
 

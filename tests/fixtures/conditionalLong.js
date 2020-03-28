@@ -1,4 +1,4 @@
-import * as esprima from 'esprima';
+const esprima = require('esprima');
 
 const parsed = esprima.parse(`
     if (x === 1) { foo(1); }
@@ -14,4 +14,4 @@ const parsed = esprima.parse(`
     if (x === 11) { foo(11); }
 `);
 
-export default parsed;
+module.exports = parsed;

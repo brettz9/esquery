@@ -1,6 +1,6 @@
-import esquery from '../esquery.js';
-import forLoop from './fixtures/forLoop.js';
-import ast from './fixtures/allClasses.js';
+const esquery = require('../');
+const forLoop = require('./fixtures/forLoop.js');
+const ast = require('./fixtures/allClasses.js');
 
 describe('match', function () {
 

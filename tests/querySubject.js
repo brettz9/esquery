@@ -1,11 +1,11 @@
-import esquery from '../esquery.js';
-import conditional from './fixtures/conditional.js';
-import forLoop from './fixtures/forLoop.js';
-import simpleFunction from './fixtures/simpleFunction.js';
-import simpleProgram from './fixtures/simpleProgram.js';
+const esquery = require('../');
+const conditional = require('./fixtures/conditional.js');
+const forLoop = require('./fixtures/forLoop.js');
+const simpleFunction = require('./fixtures/simpleFunction.js');
+const simpleProgram = require('./fixtures/simpleProgram.js');
 
-import nestedFunctions from './fixtures/nestedFunctions.js';
-import bigArray from './fixtures/bigArray.js';
+const nestedFunctions = require('./fixtures/nestedFunctions.js');
+const bigArray = require('./fixtures/bigArray.js');
 
 describe('Query subject', function () {
 

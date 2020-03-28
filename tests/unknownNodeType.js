@@ -1,5 +1,5 @@
-import esquery from '../esquery.js';
-import AST from './fixtures/unknownNodeTypeAST.js';
+const esquery = require('../');
+const AST = require('./fixtures/unknownNodeTypeAST.js');
 
 describe('Unknown node type', function () {
     it('does not throw', function () {

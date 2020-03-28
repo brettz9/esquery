@@ -1,6 +1,6 @@
-import esquery from '../esquery.js';
-import conditional from './fixtures/conditional.js';
-import simpleProgram from './fixtures/simpleProgram.js';
+const esquery = require('../');
+const conditional = require('./fixtures/conditional.js');
+const simpleProgram = require('./fixtures/simpleProgram.js');
 
 describe('Field query', function () {
 

@@ -1,4 +1,4 @@
-import esquery from "../esquery.js";
+const esquery = require('../');
 
 describe("basic query parsing", function () {
 

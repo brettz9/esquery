@@ -1,9 +1,9 @@
-import esquery from '../esquery.js';
-import conditional from './fixtures/conditional.js';
-import conditionalLong from './fixtures/conditionalLong.js';
-import forLoop from './fixtures/forLoop.js';
-import simpleFunction from './fixtures/simpleFunction.js';
-import simpleProgram from './fixtures/simpleProgram.js';
+const esquery = require('../');
+const conditional = require('./fixtures/conditional.js');
+const conditionalLong = require('./fixtures/conditionalLong.js');
+const forLoop = require('./fixtures/forLoop.js');
+const simpleFunction = require('./fixtures/simpleFunction.js');
+const simpleProgram = require('./fixtures/simpleProgram.js');
 
 describe('Pseudo *-child query', function () {
 

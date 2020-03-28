@@ -1,4 +1,4 @@
-import * as esprima from 'esprima';
+const esprima = require('esprima');
 
 const parsed = esprima.parse(`
     var x = 1;
@@ -7,4 +7,4 @@ const parsed = esprima.parse(`
     if (y) { y += 'z'; }
 `);
 
-export default parsed;
+module.exports = parsed;

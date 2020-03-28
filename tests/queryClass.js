@@ -1,5 +1,5 @@
-import esquery from '../esquery.js';
-import ast from './fixtures/allClasses.js';
+const esquery = require('../');
+const ast = require('./fixtures/allClasses.js');
 
 describe('Class query', function () {
 

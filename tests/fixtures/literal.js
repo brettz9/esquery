@@ -1,4 +1,4 @@
-import * as esprima from 'esprima';
+const esprima = require('esprima');
 
 const parsed = esprima.parse(`
     var y = '\b\f\\n\\r\t\v and just a  back\\slash';
@@ -7,4 +7,4 @@ const parsed = esprima.parse(`
     var a = 'abc\\z';
 `);
 
-export default parsed;
+module.exports = parsed;
