@@ -7,7 +7,7 @@ const simpleProgram = require('./fixtures/simpleProgram.js');
 describe('Type query', function () {
 
     it('conditional', function () {
-        let matches = esquery(conditional, 'Program');
+        var matches = esquery(conditional, 'Program');
         assert.includeMembers(matches, [conditional]);
 
         matches = esquery(conditional, 'IfStatement');
@@ -33,7 +33,7 @@ describe('Type query', function () {
     });
 
     it('for loop', function () {
-        let matches = esquery(forLoop, 'Program');
+        var matches = esquery(forLoop, 'Program');
         assert.includeMembers(matches, [forLoop]);
 
         matches = esquery(forLoop, 'ForStatement');
@@ -48,7 +48,7 @@ describe('Type query', function () {
     });
 
     it('simple function', function () {
-        let matches = esquery(simpleFunction, 'Program');
+        var matches = esquery(simpleFunction, 'Program');
         assert.includeMembers(matches, [simpleFunction]);
 
         matches = esquery(simpleFunction, 'VariableDeclaration');
@@ -68,7 +68,7 @@ describe('Type query', function () {
     });
 
     it('simple program', function () {
-        let matches = esquery(simpleProgram, 'Program');
+        var matches = esquery(simpleProgram, 'Program');
         assert.includeMembers(matches, [simpleProgram]);
 
         matches = esquery(simpleProgram, 'VariableDeclaration');
@@ -95,7 +95,7 @@ describe('Type query', function () {
     });
 
     it('# type', function () {
-        let matches = esquery(forLoop, '#Program');
+        var matches = esquery(forLoop, '#Program');
         assert.includeMembers(matches, [
             forLoop
         ]);
@@ -112,7 +112,7 @@ describe('Type query', function () {
     });
 
     it('case insensitive type', function () {
-        let matches = esquery(forLoop, 'Program');
+        var matches = esquery(forLoop, 'Program');
         assert.includeMembers(matches, [
             forLoop
         ]);

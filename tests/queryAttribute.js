@@ -8,7 +8,7 @@ const simpleProgram = require('./fixtures/simpleProgram.js');
 describe('Attribute query', function () {
 
     it('conditional', function () {
-        let matches = esquery(conditional, '[name="x"]');
+        var matches = esquery(conditional, '[name="x"]');
         assert.includeMembers(matches, [
             conditional.body[0].test.left,
             conditional.body[0].alternate.body[0].expression.left,
@@ -80,7 +80,7 @@ describe('Attribute query', function () {
     });
 
     it('for loop', function () {
-        let matches = esquery(forLoop, '[operator="="]');
+        var matches = esquery(forLoop, '[operator="="]');
         assert.includeMembers(matches, [
             forLoop.body[0].init
         ]);
@@ -99,7 +99,7 @@ describe('Attribute query', function () {
     });
 
     it('simple function', function () {
-        let matches = esquery(simpleFunction, '[kind="var"]');
+        var matches = esquery(simpleFunction, '[kind="var"]');
         assert.includeMembers(matches, [
             simpleFunction.body[0].body.body[0]
         ]);
@@ -116,7 +116,7 @@ describe('Attribute query', function () {
     });
 
     it('simple program', function () {
-        let matches = esquery(simpleProgram, '[kind="var"]');
+        var matches = esquery(simpleProgram, '[kind="var"]');
         assert.includeMembers(matches, [
             simpleProgram.body[0],
             simpleProgram.body[1]
@@ -168,14 +168,16 @@ describe('Attribute query', function () {
         ]);
     });
 
-    it('multiple regexp flags (i and u)', function () {
-        const matches = esquery(simpleProgram, '[name=/\\u{61}|[SDFY]/iu]');
-        assert.includeMembers(matches, [
-            simpleProgram.body[1].declarations[0].id,
-            simpleProgram.body[3].test,
-            simpleProgram.body[3].consequent.body[0].expression.left
-        ]);
-    });
+    if ((/^(?:[6-9]|\d{2,})\./).test(process.version)) {
+        it('multiple regexp flags (i and u)', function () {
+            const matches = esquery(simpleProgram, '[name=/\\u{61}|[SDFY]/iu]');
+            assert.includeMembers(matches, [
+                simpleProgram.body[1].declarations[0].id,
+                simpleProgram.body[3].test,
+                simpleProgram.body[3].consequent.body[0].expression.left
+            ]);
+        });
+    }
 
     if ((/^(?:[89]|\d{2,})\./).test(process.version)) {
         it('regexp flag (s)', function () {
@@ -274,7 +276,7 @@ describe('Attribute query', function () {
     });
 
     it('attribute type', function () {
-        let matches = esquery(conditional, '[test=type(object)]');
+        var matches = esquery(conditional, '[test=type(object)]');
         assert.includeMembers(matches, [
             conditional.body[0],
             conditional.body[1],

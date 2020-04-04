@@ -30,7 +30,7 @@ describe('Pseudo *-child query', function () {
     });
 
     it('conditional nth child', function () {
-        let matches = esquery(conditional, ':nth-child(2)');
+        var matches = esquery(conditional, ':nth-child(2)');
         assert.includeMembers(matches, [
             conditional.body[1]
         ]);
@@ -100,7 +100,7 @@ describe('Pseudo *-child query', function () {
     });
 
     it('simple function nth child', function () {
-        let matches = esquery(simpleFunction, ':nth-child(2)');
+        var matches = esquery(simpleFunction, ':nth-child(2)');
         assert.includeMembers(matches, [
             simpleFunction.body[0].params[1],
             simpleFunction.body[0].body.body[1]
@@ -139,7 +139,7 @@ describe('Pseudo *-child query', function () {
     });
 
     it('simple program nth child', function () {
-        let matches = esquery(simpleProgram, ':nth-child(2)');
+        var matches = esquery(simpleProgram, ':nth-child(2)');
         assert.includeMembers(matches, [
             simpleProgram.body[1]
         ]);

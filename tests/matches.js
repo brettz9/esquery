@@ -49,7 +49,7 @@ describe('matches', function () {
     it('falsey ancestry', function () {
         const selector = esquery.parse('*');
 
-        assert.doesNotThrow(() => {
+        assert.doesNotThrow(function () {
             esquery.matches(
                 forLoop,
                 selector,
@@ -57,7 +57,7 @@ describe('matches', function () {
             );
         });
 
-        assert.doesNotThrow(() => {
+        assert.doesNotThrow(function () {
             esquery.matches(
                 forLoop,
                 selector,
@@ -65,7 +65,7 @@ describe('matches', function () {
             );
         });
 
-        assert.doesNotThrow(() => {
+        assert.doesNotThrow(function () {
             esquery.matches(
                 forLoop,
                 selector,
@@ -75,8 +75,8 @@ describe('matches', function () {
     });
 
     it('missing parent', function () {
-        let selector = esquery.parse('!VariableDeclaration + !ExpressionStatement');
-        assert.doesNotThrow(() => {
+        var selector = esquery.parse('!VariableDeclaration + !ExpressionStatement');
+        assert.doesNotThrow(function () {
             esquery.matches(
                 simpleProgram.body[2],
                 selector,
@@ -85,7 +85,7 @@ describe('matches', function () {
         });
 
         selector = esquery.parse('!VariableDeclaration ~ IfStatement');
-        assert.doesNotThrow(() => {
+        assert.doesNotThrow(function () {
             esquery.matches(
                 simpleProgram.body[3],
                 selector,
@@ -95,8 +95,8 @@ describe('matches', function () {
     });
 
     it('adjacent/sibling', function () {
-        let selector = esquery.parse('!VariableDeclaration + !ExpressionStatement');
-        assert.doesNotThrow(() => {
+        var selector = esquery.parse('!VariableDeclaration + !ExpressionStatement');
+        assert.doesNotThrow(function () {
             esquery.matches(
                 simpleProgram.body[2],
                 selector,
@@ -105,7 +105,7 @@ describe('matches', function () {
         });
 
         selector = esquery.parse('!VariableDeclaration ~ IfStatement');
-        assert.doesNotThrow(() => {
+        assert.doesNotThrow(function () {
             esquery.matches(
                 simpleProgram.body[3],
                 selector,
@@ -115,8 +115,8 @@ describe('matches', function () {
     });
 
     it('Non-array list prop', function () {
-        let selector = esquery.parse('!IfStatement ~ IfStatement');
-        assert.doesNotThrow(() => {
+        var selector = esquery.parse('!IfStatement ~ IfStatement');
+        assert.doesNotThrow(function () {
             esquery.matches(
                 conditional.body[1],
                 selector,
@@ -125,7 +125,7 @@ describe('matches', function () {
         });
 
         selector = esquery.parse('!IfStatement + IfStatement');
-        assert.doesNotThrow(() => {
+        assert.doesNotThrow(function () {
             esquery.matches(
                 conditional.body[1],
                 selector,

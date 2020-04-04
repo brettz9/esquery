@@ -13,7 +13,7 @@ describe('Pseudo matches query', function () {
     });
 
     it('#8: descendant selector includes ancestor in search', function() {
-        let matches = esquery(conditional, 'Identifier[name=x]');
+        var matches = esquery(conditional, 'Identifier[name=x]');
         assert.equal(4, matches.length);
         matches = esquery(conditional, 'Identifier [name=x]');
         assert.equal(0, matches.length);
